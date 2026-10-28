@@ -45,7 +45,7 @@ const Registrationform = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('https://myproject-nl8l.onrender.com/api/auth/register', formData);
       setIsError(false);
       setMessage(res.data.message || 'Registration successful! Redirecting to login...');
 

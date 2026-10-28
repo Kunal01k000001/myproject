@@ -22,7 +22,7 @@ const Adminmessage = () => {
     const checkAdminAndFetchData = async () => {
       try {
         // STEP A: Backend me verify karo ki user sach me admin hai
-        await axios.get('http://localhost:5000/api/auth/admin-check', {
+        await axios.get('https://myproject-nl8l.onrender.com/api/auth/admin-check', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -32,7 +32,7 @@ const Adminmessage = () => {
         setIsAdminVerified(true);
 
         // STEP B: Ab saare messages fetch karo
-        const res = await axios.get('http://localhost:5000/api/auth/admin/all-messages', {
+        const res = await axios.get('https://myproject-nl8l.onrender.com/api/auth/admin/all-messages', {
           headers: {
             Authorization: `Bearer ${token}`,
           },

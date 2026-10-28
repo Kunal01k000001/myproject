@@ -39,7 +39,7 @@ const Loginform = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await axios.post('https://myproject-nl8l.onrender.com/api/auth/login', formData);
 
       const token = res.data.data?.token;
       const user = res.data.data?.user; // 👈 user ko define kiya

@@ -40,7 +40,7 @@ const Contact = () => {
     try {
       // 2. Protected backend route hit karein
       const res = await axios.post(
-        'http://localhost:5000/api/contact',
+        'https://myproject-nl8l.onrender.com/api/contact',
         formData,
         {
           headers: {

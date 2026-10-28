@@ -17,7 +17,7 @@ const MyMessages = () => {
       }
 
       try {
-        const res = await axios.get('http://localhost:5000/api/my-messages', {
+        const res = await axios.get('https://myproject-nl8l.onrender.com/api/my-messages', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
