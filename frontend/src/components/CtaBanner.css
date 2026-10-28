@@ -1,0 +1,52 @@
+/* ── CTA Banner ── */
+.cta-banner {
+  background: linear-gradient(135deg, #141420, #1a1a2e);
+  padding: 64px 24px;
+  border-top: 1px solid #1e3a5f;
+  border-bottom: 1px solid #1e3a5f;
+}
+
+.cta-content {
+  max-width: 800px;
+}
+
+.cta-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00e676;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseDot 2s infinite;
+}
+
+.cta-subtitle {
+  color: #b0bec5;
+  max-width: 500px;
+  margin-top: 16px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 230, 118, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 230, 118, 0);
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-title {
+    font-size: 1.25rem;
+  }
+}

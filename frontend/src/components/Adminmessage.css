@@ -1,0 +1,209 @@
+/* Container Scoping */
+.admin-msg-scope {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+.admin-msg-scope * {
+  box-sizing: border-box;
+}
+
+.admin-msg-scope .admin-main-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Header */
+.admin-msg-scope .admin-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 20px 24px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.admin-msg-scope .admin-header-bar h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.admin-msg-scope .admin-verified-tag {
+  background-color: #16a34a;
+  color: #ffffff;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+/* Loader & Status Screens */
+.admin-msg-scope .admin-status-screen {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.admin-msg-scope .admin-spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: admin-spin 0.8s linear infinite;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-msg-scope .admin-status-text {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Alerts */
+.admin-msg-scope .admin-alert-error {
+  padding: 14px 20px;
+  border-radius: 6px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.admin-msg-scope .admin-alert-info {
+  padding: 16px 20px;
+  border-radius: 6px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Table Card & Scroll Wrapper */
+.admin-msg-scope .admin-table-box {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Table */
+.admin-msg-scope .admin-custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+}
+
+.admin-msg-scope .admin-custom-table thead tr {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.admin-msg-scope .admin-custom-table th {
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.admin-msg-scope .admin-custom-table tbody tr {
+  border-bottom: 1px solid #edf2f7;
+}
+
+.admin-msg-scope .admin-custom-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.admin-msg-scope .admin-custom-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.admin-msg-scope .admin-custom-table td {
+  padding: 14px 18px;
+  vertical-align: middle;
+}
+
+/* Column Elements */
+.admin-msg-scope .admin-user-id {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  background-color: #e2e8f0;
+  color: #334155;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.admin-msg-scope .admin-user-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.admin-msg-scope .admin-user-email {
+  color: #475569;
+}
+
+.admin-msg-scope .admin-msg-body {
+  max-width: 320px;
+  min-width: 220px;
+  word-break: break-word;
+  line-height: 1.5;
+  color: #0f172a;
+}
+
+.admin-msg-scope .admin-msg-date {
+  font-size: 12px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .admin-msg-scope {
+    padding: 20px 12px;
+  }
+
+  .admin-msg-scope .admin-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .admin-msg-scope .admin-header-bar h2 {
+    font-size: 18px;
+  }
+
+  .admin-msg-scope .admin-custom-table th,
+  .admin-msg-scope .admin-custom-table td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .admin-msg-scope .admin-msg-body {
+    max-width: 200px;
+  }
+}

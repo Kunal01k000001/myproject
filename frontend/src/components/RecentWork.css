@@ -1,0 +1,44 @@
+/* ── Recent Work Cards (dark theme custom styles only) ── */
+.work-card {
+  background-color: #141420;
+  border: 1px solid #1e3a5f;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+}
+
+.work-accent-bar {
+  height: 3px;
+  width: 100%;
+}
+
+.work-body {
+  padding: 28px;
+}
+
+.work-title {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.work-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background-color: rgba(0, 229, 255, 0.1);
+  color: #00e5ff;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.work-desc {
+  color: #b0bec5;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0;
+}

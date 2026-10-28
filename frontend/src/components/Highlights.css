@@ -1,0 +1,33 @@
+/* ── Highlights Cards (dark theme custom styles only) ── */
+.highlight-card {
+  background-color: #141420;
+  border: 1px solid #1e3a5f;
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  border-color: #00e5ff;
+}
+
+.highlight-icon {
+  color: #00e5ff;
+}
+
+.highlight-label {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.highlight-desc {
+  color: #b0bec5;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}

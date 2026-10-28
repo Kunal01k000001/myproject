@@ -1,0 +1,125 @@
+/* ── Hero Section ── */
+.hero-section {
+  min-height: calc(100vh - 64px);
+  padding-top: 80px;
+ 
+}
+
+.hero-content {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-greeting {
+  font-size: 1rem;
+  color: #b0bec5;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  border-left: 3px solid #00e5ff;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.hero-title {
+  font-size: 1.3rem;
+  color: #00e5ff;
+  font-weight: 600;
+  margin: 12px 0 20px;
+}
+
+.hero-intro {
+  color: #b0bec5;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+/* ── CTA Buttons (custom dark-theme btn overrides) ── */
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background-color: #00e5ff;
+  color: #0a0a0a;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #00bcd4;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid #00e5ff;
+  color: #00e5ff;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  
+  transform: translateY(-2px);
+}
+
+/* ── Hero Image ── */
+.hero-image-wrapper {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  padding: 0px;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  height: 570px;
+  border-radius: 12px;
+  color: #b0bec5;
+  margin: 0 auto;
+  animation: subtleGlow 3s infinite alternate;
+}
+
+
+
+@media (max-width: 992px) {
+  .hero-name {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-image-wrapper {
+    order: -1;
+  }
+
+  .hero-greeting {
+    padding-left: 0;
+    border-left: none;
+    border-bottom: 3px solid #00e5ff;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+
+  .hero-intro {
+    margin: 0 auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+}
