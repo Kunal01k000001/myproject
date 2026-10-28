@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const MyMessages = () => {
+const Mymessage = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -84,4 +84,4 @@ const MyMessages = () => {
   );
 };
 
-export default MyMessages;
+export default Mymessage;

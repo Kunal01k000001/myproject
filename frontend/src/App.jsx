@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import SkillsPage from './pages/SkillsPage';
@@ -9,10 +8,11 @@ import Registrationform from './components/Registrationform';
 import Loginform from './components/Loginform';
 import './App.css';
 import Profile from './components/profile';
-import MyMessages from './components/Mymessage';
+
 import ForgotPassword from './components/forgotpassword';
 import ResetPassword from './components/Resetpassword';
 import Adminmessage from './components/Adminmessage';
+import Mymessage from './components/Mymessage';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path='/profile'  element={<Profile/>}/>
-          <Route path="/my-messages" element={<MyMessages />} />
+          <Route path="/my-messages" element={<Mymessage/>} />
            
           </Route>
 
