@@ -3,7 +3,7 @@ import User from '../models/userModel.js';
 import jwt from 'jsonwebtoken';
 import Message from '../models/messageModel.js';
 import crypto from 'crypto';
-import { sendEmail } from '../utils/sendEmail.js';
+
 
 
 
@@ -158,41 +158,22 @@ export const forgotPasswordService = async ({ email }) => {
   await user.save();
 
   // 6. Return: Controller ko token return kar do
- const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
+ const clientUrl = process.env.CLIENT_URL || 'https://myproject-3lm4.vercel.app';
+  const resetUrl = `${clientUrl}/reset-password/${resetToken}`;
+
+  // 7. Direct Controller ko response return karein (Bina kisi email ke)
+  return {
+    message: 'Reset link generated successfully!',
+    resetLink: resetUrl,
+  };
 
   // 5.2 Email ka HTML template
-  const htmlMessage = `
-    <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 500px; margin: auto; padding: 20px; border: 1px solid #e2e8f0; border-radius: 8px;">
-      <h2 style="color: #0284c7; text-align: center;">Reset Your Password</h2>
-      <p>Hello,</p>
-      <p>Aapne apna password reset karne ki request bheji thi. Naya password banane ke liye niche diye gaye button par click karein:</p>
-      
-      <div style="text-align: center; margin: 25px 0;">
-        <a href="${resetUrl}" style="background-color: #0284c7; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block;">
-          Reset Password
-        </a>
-      </div>
-
-      <p style="font-size: 13px; color: #64748b;">
-        Yeh link agle <b>15 minutes</b> ke liye valid hai. Agar aapne request nahi ki thi, toh is email ko ignore karein.
-      </p>
-    </div>
-  `;
-
+  
   // 5.3 Mail send kiya
-  await sendEmail({
-    to: user.email,
-    subject: 'Password Reset Request',
-    html: htmlMessage,
-  });
-
+  
   // 👆 YAHAN TAK NAYA PART THA 👆
 
-  // 6. Return: Controller ko token return kar do (Jaise pehle tha waisa hi)
-  return {
-    resetToken,
-    email: user.email,
-  };
+  // 6. Return: Controller ko token return kar do (Jaise pehle tha waisa hi) 
 };
 export const resetPasswordService = async ({ token, newPassword }) => {
   // 1. Validation

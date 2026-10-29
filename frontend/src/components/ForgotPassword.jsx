@@ -8,6 +8,7 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [resetLink, setResetLink] = useState('');
   const [isError, setIsError] = useState(false);
   const [loading, setLoading] = useState(false);
   
@@ -24,6 +25,7 @@ const ForgotPassword = () => {
 
       setIsError(false);
       setMessage(res.data.message || 'Password reset link sent to your email!');
+      setResetLink(res.data.resetLink);
       setEmail('');
     } catch (err) {
       setIsError(true);
@@ -48,6 +50,35 @@ const ForgotPassword = () => {
         {message && (
           <div className={`status-alert ${isError ? 'alert-danger' : 'alert-success'}`}>
             {message}
+          </div>
+        )}
+        {resetLink && (
+          <div style={{
+            margin: '16px 0',
+            padding: '14px',
+            backgroundColor: '#ecfdf5',
+            border: '1px solid #6ee7b7',
+            borderRadius: '8px',
+            textAlign: 'center'
+          }}>
+            <p style={{ margin: '0 0 10px 0', fontSize: '14px', color: '#065f46', fontWeight: 600 }}>
+              Password Reset Link Ready:
+            </p>
+            <a
+              href={resetLink}
+              style={{
+                display: 'inline-block',
+                backgroundColor: '#0284c7',
+                color: '#ffffff',
+                padding: '9px 18px',
+                borderRadius: '6px',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                fontSize: '14px'
+              }}
+            >
+              Reset Password Now →
+            </a>
           </div>
         )}
 
