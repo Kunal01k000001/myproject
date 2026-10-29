@@ -4,15 +4,17 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import SkillsPage from './pages/SkillsPage';
 import ContactPage from './pages/ContactPage';
-import Registrationform from './components/Registrationform';
-import Loginform from './components/Loginform';
+import RegistrationForm from './components/RegistrationForm';
+import LoginForm from './components/LoginForm';
 import './App.css';
-import Profile from './components/profile';
+import Profile from './components/Profile';
 
-import ForgotPassword from './components/forgotpassword';
-import ResetPassword from './components/Resetpassword';
-import Adminmessage from './components/Adminmessage';
-import Mymessage from './components/Mymessage';
+
+import ResetPassword from './components/ResetPassword';
+import AdminMessage from './components/AdminMessage';
+import MyMessage from './components/MyMessage';
+import ForgotPassword from './components/ForgotPassword';
+
 
 function App() {
   return (
@@ -26,15 +28,15 @@ function App() {
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path='/profile'  element={<Profile/>}/>
-          <Route path="/my-messages" element={<Mymessage/>} />
+          <Route path="/my-messages" element={<MyMessage/>} />
            
           </Route>
 
-          <Route path="/register" element={<Registrationform />} />
+          <Route path="/register" element={<RegistrationForm />} />
          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/login" element={<Loginform />} />
+          <Route path="/login" element={<LoginForm />} />
           <Route path="/reset-password/:token" element={<ResetPassword />} />
-          <Route path='/adminmessage' element={<Adminmessage/>}/>
+          <Route path='/adminmessage' element={<AdminMessage/>}/>
         </Routes>
       </main>
     </>
