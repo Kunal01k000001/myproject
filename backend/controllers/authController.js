@@ -114,7 +114,7 @@ export const forgotPassword = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: 'Password reset link/token generated successfully',
-      resetLink: data.resetToken, // Testing ke liye hum response me bhej rahe hain
+      resetLink: data.resetLink, // Testing ke liye hum response me bhej rahe hain
     });
   } catch (error) {
     return res.status(error.statusCode || 500).json({
