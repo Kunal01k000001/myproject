@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './RegistrationForm.css';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Registrationform = () => {
   // Page load animation ke liye state
@@ -45,7 +46,7 @@ const Registrationform = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('https://myproject-nl8l.onrender.com/api/auth/register', formData);
+      const res = await axios.post(`${API_URL}/api/auth/register`, formData);
       setIsError(false);
       setMessage(res.data.message || 'Registration successful! Redirecting to login...');
 

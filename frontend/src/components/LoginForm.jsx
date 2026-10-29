@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import './LoginForm.css';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Loginform = () => {
   const [pageLoading, setPageLoading] = useState(true);
@@ -39,7 +40,7 @@ const Loginform = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('https://myproject-nl8l.onrender.com/api/auth/login', formData);
+      const res = await axios.post(`${API_URL}/api/auth/login`, formData);
 
       const token = res.data.data?.token;
       const user = res.data.data?.user; // 👈 user ko define kiya

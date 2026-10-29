@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './ForgotPassword.css';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ const ForgotPassword = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('https://myproject-nl8l.onrender.com/api/auth/forgot-password', {
+      const res = await axios.post(`${API_URL}/api/auth/forgot-password`, {
         email,
       });
 

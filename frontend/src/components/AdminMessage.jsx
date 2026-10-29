@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './AdminMessage.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Adminmessage = () => {
   const [messages, setMessages] = useState([]);
@@ -22,7 +23,7 @@ const Adminmessage = () => {
     const checkAdminAndFetchData = async () => {
       try {
         // STEP A: Backend me verify karo ki user sach me admin hai
-        await axios.get('https://myproject-nl8l.onrender.com/api/auth/admin-check', {
+        await axios.get(`${API_URL}/api/auth/admin-check1`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -32,7 +33,7 @@ const Adminmessage = () => {
         setIsAdminVerified(true);
 
         // STEP B: Ab saare messages fetch karo
-        const res = await axios.get('https://myproject-nl8l.onrender.com/api/auth/admin/all-messages', {
+        const res = await axios.get(`${API_URL}/api/auth/admin/all-messages`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

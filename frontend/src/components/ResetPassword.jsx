@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate, Link } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const ResetPassword = () => {
   const { token } = useParams(); // URL bar se :token pakad lega
@@ -25,7 +26,7 @@ const ResetPassword = () => {
     setMessage('');
 
     try {
-      const res = await axios.post(`https://myproject-nl8l.onrender.com/api/auth/reset-password/${token}`, {
+      const res = await axios.post(`${API_URL}/api/auth/reset-password/${token}`, {
         newPassword,
       });
 

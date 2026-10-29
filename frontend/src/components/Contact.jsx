@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Mail } from 'lucide-react';
 import './Contact.css';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const LinkedinIcon = ({ size = 20, color = 'currentColor' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +41,7 @@ const Contact = () => {
     try {
       // 2. Protected backend route hit karein
       const res = await axios.post(
-        'https://myproject-nl8l.onrender.com/api/contact',
+        `${API_URL}/api/contact`,
         formData,
         {
           headers: {

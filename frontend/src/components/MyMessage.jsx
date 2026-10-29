@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 const Mymessage = () => {
   const [messages, setMessages] = useState([]);
@@ -77,9 +78,11 @@ const Mymessage = () => {
                 </div>
               </div>
             </div>
+            
           </div>
         ))}
       </div>
+      <button>logout</button>
     </div>
   );
 };
