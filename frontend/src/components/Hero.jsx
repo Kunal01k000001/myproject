@@ -28,7 +28,7 @@ const Hero = () => {
           
           <div className="col-lg-6 hero-image-wrapper" >
             <div className="hero-image-placeholder d-flex flex-column align-items-center justify-content-center">
-              <Camera size={32} color="#b0bec5" className="mb-2" />
+             
       <div style={{ width: '100%', height: '520px', overflow: 'hidden' }}>
       <iframe
         title="Worker 12"
